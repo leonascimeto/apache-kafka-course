@@ -20,7 +20,7 @@ public class StrConsumerListener {
         log.info("LOG ::: Message received: {}", message);
     }
 
-    @StrConsumerCustomListener(groupId = "group-2")
+    @KafkaListener(topics = "str-topic",groupId = "group-2", containerFactory = "validMessageContainerFactory")
     public void history(String message) {
         log.info("HISTORY ::: Message received: {}", message);
     }
